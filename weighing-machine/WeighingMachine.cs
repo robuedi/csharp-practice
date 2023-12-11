@@ -2,7 +2,7 @@ using System;
 
 class WeighingMachine
 {
-    public int Precision {get; private set;}
+    public int Precision {get;}
 
     private double weight;
     public double Weight {

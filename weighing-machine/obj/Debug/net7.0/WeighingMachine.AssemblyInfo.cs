@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("WeighingMachine")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+d348d3b8c480948a005f6eb8593c8630c9320dd7")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+43808cb7846f3b1009f3330b6016be8bedf087f0")]
 [assembly: System.Reflection.AssemblyProductAttribute("WeighingMachine")]
 [assembly: System.Reflection.AssemblyTitleAttribute("WeighingMachine")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
