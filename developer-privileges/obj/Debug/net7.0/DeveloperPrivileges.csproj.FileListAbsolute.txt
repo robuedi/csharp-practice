@@ -1,0 +1,6 @@
+/Users/eduard/Exercism/csharp/developer-privileges/obj/Debug/net7.0/DeveloperPrivileges.csproj.AssemblyReference.cache
+/Users/eduard/Exercism/csharp/developer-privileges/obj/Debug/net7.0/DeveloperPrivileges.GeneratedMSBuildEditorConfig.editorconfig
+/Users/eduard/Exercism/csharp/developer-privileges/obj/Debug/net7.0/DeveloperPrivileges.AssemblyInfoInputs.cache
+/Users/eduard/Exercism/csharp/developer-privileges/obj/Debug/net7.0/DeveloperPrivileges.AssemblyInfo.cs
+/Users/eduard/Exercism/csharp/developer-privileges/obj/Debug/net7.0/DeveloperPrivileges.csproj.CoreCompileInputs.cache
+/Users/eduard/Exercism/csharp/developer-privileges/obj/Debug/net7.0/DeveloperPrivileges.sourcelink.json
