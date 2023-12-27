@@ -1,6 +1,6 @@
 public class RemoteControlCar
 {
-    public TelemetryCar Telemetry {set;get;}
+    public TelemetryCar Telemetry {get;}
 
     public RemoteControlCar()
     {
