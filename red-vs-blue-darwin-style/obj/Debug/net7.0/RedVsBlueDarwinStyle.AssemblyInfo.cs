@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("RedVsBlueDarwinStyle")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+a999f2d1ec1d6ac096c89e357a49fd0c08748040")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+8de5cc2af953f2fa4b2d2282b99bad885eb3ee4a")]
 [assembly: System.Reflection.AssemblyProductAttribute("RedVsBlueDarwinStyle")]
 [assembly: System.Reflection.AssemblyTitleAttribute("RedVsBlueDarwinStyle")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
