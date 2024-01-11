@@ -1,5 +1,7 @@
 using System;
-
+using System.Globalization;
+using System.Data;
+using System.Linq;
 
 public enum Location
 {
@@ -17,28 +19,35 @@ public enum AlertLevel
 
 public static class Appointment
 {
-    public static DateTime ShowLocalTime(DateTime dtUtc)
-    {
-        throw new NotImplementedException("Please implement the (static) Appointment.ShowLocalTime() method");
-    }
+    public static DateTime ShowLocalTime(DateTime dtUtc) => dtUtc.ToLocalTime();
 
-    public static DateTime Schedule(string appointmentDateDescription, Location location)
-    {
-        throw new NotImplementedException("Please implement the (static) Appointment.Schedule() method");
-    }
+    public static DateTime Schedule(string appointmentDateDescription, Location location) => TimeZoneInfo.ConvertTimeToUtc(DateTime.Parse(appointmentDateDescription), location.ToTimeZone());
 
-    public static DateTime GetAlertTime(DateTime appointment, AlertLevel alertLevel)
+    public static DateTime GetAlertTime(DateTime appointment, AlertLevel alertLevel) => alertLevel switch 
     {
-        throw new NotImplementedException("Please implement the (static) Appointment.GetAlertTime() method");
-    }
+        AlertLevel.Early => appointment.AddDays(-1),
+        AlertLevel.Standard => appointment.AddHours(-1).AddMinutes(-45),
+        AlertLevel.Late => appointment.AddMinutes(-30),
+        _ => throw new ArgumentOutOfRangeException(nameof(alertLevel), alertLevel, null)
+    };
 
-    public static bool HasDaylightSavingChanged(DateTime dt, Location location)
-    {
-        throw new NotImplementedException("Please implement the (static) Appointment.HasDaylightSavingChanged() method");
-    }
+    public static bool HasDaylightSavingChanged(DateTime dt, Location location) => location.ToTimeZone().IsDaylightSavingTime(dt) != location.ToTimeZone().IsDaylightSavingTime(dt.AddDays(-7));
 
-    public static DateTime NormalizeDateTime(string dtStr, Location location)
+    public static DateTime NormalizeDateTime(string dtStr, Location location) => DateTime.TryParse(dtStr, location.ToCulture(), DateTimeStyles.AssumeLocal, out var dateTime) ? dateTime : DateTime.MinValue;
+
+    private static TimeZoneInfo ToTimeZone(this Location location) => location switch
     {
-        throw new NotImplementedException("Please implement the (static) Appointment.NormalizeDateTime() method");
-    }
+        Location.NewYork => TimeZoneInfo.FindSystemTimeZoneById("America/New_York"),
+        Location.London => TimeZoneInfo.FindSystemTimeZoneById("Europe/London"),
+        Location.Paris => TimeZoneInfo.FindSystemTimeZoneById("Europe/Paris"),
+        _ => throw new ArgumentOutOfRangeException(nameof(location), location, null)
+    };
+
+    private static CultureInfo ToCulture(this Location location) => location switch
+    {
+        Location.NewYork => CultureInfo.GetCultureInfo("en-US"),
+        Location.London => CultureInfo.GetCultureInfo("en-GB"),
+        Location.Paris => CultureInfo.GetCultureInfo("fr-FR"),
+        _ => throw new ArgumentOutOfRangeException(nameof(location), location, null)
+    };
 }

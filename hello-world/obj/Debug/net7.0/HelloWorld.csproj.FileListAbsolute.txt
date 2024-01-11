@@ -97,3 +97,4 @@
 /Users/eduard/Exercism/csharp/hello-world/obj/Debug/net7.0/HelloWorld.pdb
 /Users/eduard/Exercism/csharp/hello-world/obj/Debug/net7.0/HelloWorld.genruntimeconfig.cache
 /Users/eduard/Exercism/csharp/hello-world/obj/Debug/net7.0/ref/HelloWorld.dll
+/Users/eduard/Exercism/csharp/hello-world/obj/Debug/net7.0/HelloWorld.sourcelink.json
